@@ -23,14 +23,21 @@
       <input type="submit" class="btn btn-dark" value="Submit">
     </form>
     <h2 class="title">Items</h2>
-    <ul id="items" class="list-group">
+    <ul id="items" class="list-group" >
       <li class="list-group-item">Item 1</li>
       <li class="list-group-item">Item 2</li>
       <li class="list-group-item">Item 3</li>
       <li class="list-group-item">Item 4</li>
+      <li class="list-group-ele ml-3">Item 5</li>
     </ul>
    </div>
   </div>
+
+
+
+
+
+
   <script>
 
 
@@ -39,10 +46,9 @@
    // console.log(tem.nodeType)
     tem.style.borderBottom ='solid 3px #000'
 
-    const temp2 =document.querySelector(".title");
-   // console.log(temp2.content)
-    temp2.style.fontWeight ='bold';
-    temp2.style.color ='green';
+   
+  
+    
 
 
 
@@ -58,13 +64,47 @@
       element[i].style.fontWeight ='bold';
     }
 
-    
-   
-    
-    
-    
-    
 
+
+
+    //-------------------------   TASK 5 --------------------------------
+    // Create new tag (Its Optional Work)
+
+   /* const tag =document.createElement("li");
+    const con =document.createTextNode("Item 5");
+    tag.appendChild(con);
+    console.log(tag.contains)
+    const par =document.getElementById("items"); // "item" id of the parent tag of 'li' tag
+    par.appendChild(tag);*/
+
+
+
+    //Access From GetElementByClassName --------
+    var ele =document.getElementsByClassName('list-group-ele ml-3');
+    ele[0].style.backgroundColor ='yellow';
+   // ele[0].style.fontWeight ='bold'
+   // ele[0].style.color ='red';
+
+
+
+
+    // Access From Query Selector ---------
+    //Note : queryselector not able to access this element beacuse have one space between the class name
+    /*const ele2 = document.querySelector('.list-group-ele');
+    ele2.style.color ='red';
+    ele2.style.backgroundColor='yellow';
+    ele2.style.fontWeight ='bold';*/
+
+
+
+
+   //Access Get ElementByTag Name --------
+    var ele=document.getElementsByTagName('li')
+    ele[4].style.color ='blue';
+    ele[4].style.fontWeight ='bold'
+    //ele[4].style.color ='red';
+   // ele[4].style.backgroundColor ='yellow'
+    
 
   </script>
 
