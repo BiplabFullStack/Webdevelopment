@@ -1,4 +1,4 @@
-// Task 3
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +42,10 @@
 
 
     // ------------------------TASK 3 -----------------------------
-    const tem = document.getElementById('main-header');
+    //T -1 ------
+   /* const tem = document.getElementById('main-header');
    // console.log(tem.nodeType)
-    tem.style.borderBottom ='solid 3px #000'
+    tem.style.borderBottom ='solid 3px #000'*/
 
    
   
@@ -55,14 +56,16 @@
 
 //---------------------------TASK 4 -------------------------
     //Get element by className
+    //T-1 ------
     //For background-color 
-    let element =document.getElementsByClassName("list-group-item")
+   /* let element =document.getElementsByClassName("list-group-item")
     element[2].style.backgroundColor ="green";
 
+    //T-2 ------
     //For Bold Contend
     for(let i=0;i<element.length;i++){
       element[i].style.fontWeight ='bold';
-    }
+    }*/
 
 
 
@@ -78,12 +81,12 @@
     par.appendChild(tag);*/
 
 
-
+    //T-1  -------
     //Access From GetElementByClassName --------
-    var ele =document.getElementsByClassName('list-group-ele ml-3');
+    /*var ele =document.getElementsByClassName('list-group-ele ml-3');
     ele[0].style.backgroundColor ='yellow';
    // ele[0].style.fontWeight ='bold'
-   // ele[0].style.color ='red';
+   // ele[0].style.color ='red';*/
 
 
 
@@ -97,13 +100,38 @@
 
 
 
-
+    //T2 -------
    //Access Get ElementByTag Name --------
-    var ele=document.getElementsByTagName('li')
-    ele[4].style.color ='blue';
+   /* var ele=document.getElementsByTagName('li')
+    //ele[4].style.color ='blue';
     ele[4].style.fontWeight ='bold'
     //ele[4].style.color ='red';
-   // ele[4].style.backgroundColor ='yellow'
+   // ele[4].style.backgroundColor ='yellow'*/
+
+
+
+
+
+
+   // -------------------------TASK - 6 -------------------------------
+   //3rd item visibility: hidden
+   //T-1
+   const elem = document.querySelector("li:nth-child(3)");
+   elem.style.visibility='hidden'
+
+    //T-2
+   const elem2 = document.querySelector(".list-group-item:nth-child(2)");
+   elem2.style.backgroundColor ='green'
+
+    //T-3
+  const temp =document.querySelectorAll('li');
+  temp[1].style.color='green';
+
+    //T-4
+   const odd =document.querySelectorAll('li:nth-child(odd)');
+   for(let i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor ='green';
+   }
     
 
   </script>
