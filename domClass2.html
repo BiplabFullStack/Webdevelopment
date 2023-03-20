@@ -32,14 +32,40 @@
    </div>
   </div>
   <script>
+
+
+    // ------------------------TASK 3 -----------------------------
     const tem = document.getElementById('main-header');
-    console.log(tem.nodeType)
+   // console.log(tem.nodeType)
     tem.style.borderBottom ='solid 3px #000'
 
     const temp2 =document.querySelector(".title");
    // console.log(temp2.content)
-    temp2.style.fontweight ='bold';
+    temp2.style.fontWeight ='bold';
     temp2.style.color ='green';
+
+
+
+
+//---------------------------TASK 4 -------------------------
+    //Get element by className
+    //For background-color 
+    let element =document.getElementsByClassName("list-group-item")
+    element[2].style.backgroundColor ="green";
+
+    //For Bold Contend
+    for(let i=0;i<element.length;i++){
+      element[i].style.fontWeight ='bold';
+    }
+
+    
+   
+    
+    
+    
+    
+
+
   </script>
 
 </body>
