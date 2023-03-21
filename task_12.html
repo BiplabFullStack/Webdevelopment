@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharpner Project1</title>
+    
+    
+</head>
+<style>
+    h2{
+        margin-top: 35px;
+        color: darkkhaki;
+    }
+    /* form class container*/
+    .container{
+        text-align: center;
+        border: 1px solid red;
+        border-radius: 3%;
+        padding-left:5px;
+        padding-right:5px;
+        color: brown;
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+    /*Button Class*/
+    .btn{
+        color: blue;       
+        background-color:burlywood;
+        border: 1px solid red;
+        border-radius: 4px;
+        padding: 5px 230px 5px 230px;
+        margin: top 5px;;
+        margin-bottom: 10px;
+        
+    }
+    .btn:hover{
+        color: blue;
+        background-color:yellow;
+    }
+    /*Name, Email and Number Class*/
+    .container2{
+        padding-left: 194px;
+        padding-right: 172px;
+        padding-bottom: 7px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: green;
+        font-size: 13px;
+
+    }
+    /* Use for shift left of the page */
+    label{
+        float: left;
+    }
+    /*Time and Date Class*/
+    .timeAnddate{
+        padding-right: 00px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        margin-bottom: 8px;
+
+
+    }
+</style>
+<body>
+    <form action="#" id="prnt">
+        <div class="container">
+            <h2 >Book a Call</h2>
+            <p>Book a call slot and our representative call you soon</p>
+            <hr>
+
+            <div >
+                <label for="name">Name:</label><br>
+                <input class="container2" type="text" name="myName" id="name" >
+            </div>
+            <div>
+                <label for="email">Email:</label><br>
+                <input class="container2" type="email" name="myEmail" id="email" >
+            </div>
+            <div>
+                <label for="number">Phon:</label><br>
+                <input class="container2" type="text" name="myNumber" id="number" >
+            </div>
+            <div class="timeAnddate">
+                <label for="date">Time and Call:</label><br>
+                <input style="padding:4px 25px 4px 120px;" type="date" name="Date" id="date">
+                <input style="padding:4px 113px 3px 28px;" type="time" name="Time" id="time">
+            </div>
+            <div>
+                <button class="btn">GET A CALL</button>
+                <br>
+            </div>
+        </div>
+    </form>
+    <ul id="items" class="list-group" ></ul>
+    
+    
+</body>
+<script>
+
+    // ---------------------------  TASK - 12 ----------------------------
+
+
+    prnt.addEventListener('submit', onsubmit);
+    function onsubmit(e){
+      e.preventDefault();
+
+      let name =document.getElementById('name').value;
+     
+      let email =document.getElementById('email').value;
+    
+      let number =document.getElementById('number').value;
+     
+      let date =document.getElementById('date').value;
+      let time =document.getElementById('time').value;
+
+
+    let data =email+","+number+","+date+","+time;
+    
+      let listItem =document.getElementById("items");
+      let newItem =document.createElement('li');
+      newItem.appendChild(document.createTextNode(data))
+      listItem.appendChild(newItem);
+      console.log(newItem.textContent)
+
+      localStorage.setItem(name,newItem.textContent)//Store into the Local Storage
+
+
+    
+
+
+
+
+
+
+
+
+
+      
+      
+    }
+</script>
+</html>
