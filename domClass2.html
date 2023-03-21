@@ -116,7 +116,7 @@
    // -------------------------TASK - 6 -------------------------------
    //3rd item visibility: hidden
    //T-1
-   const elem = document.querySelector("li:nth-child(3)");
+   /*const elem = document.querySelector("li:nth-child(3)");
    elem.style.visibility='hidden'
 
     //T-2
@@ -131,7 +131,65 @@
    const odd =document.querySelectorAll('li:nth-child(odd)');
    for(let i=0;i<odd.length;i++){
     odd[i].style.backgroundColor ='green';
-   }
+   }*/
+
+
+
+   //-------------------------- TASK - 7 ------------------------
+
+    let itemList =document.querySelector("#items");
+
+    //parentElement(T-1)
+    //console.log(itemList.parentElement)
+
+   //lastelemrntChild(T-2)
+   /*console.log(itemList.lastElementChild)
+   itemList.lastElementChild.textContent ='Hello 4'*/
+
+   //lastChild(T-3)
+   /*console.log(itemList.lastChild);
+   itemList.lastChild.textContent ='Hello 3'*/
+
+   //firstElement Child(T-4)
+  /*console.log(itemList.firstElementChild)
+   itemList.firstElementChild.textContent ='Hello 1'*/
+
+
+   //first Child (T-5)
+   /*console.log(itemList.firstChild)
+   itemList.firstChild.textContent ='Hello 1'*/
+
+   //nextSibling(T-6)
+   //console.log(itemList.nextSibling);
+
+   //nextElementSibling(T-7)
+   //console.log(itemList.nextSibling);
+
+   //previousSibling(T-8)
+   //console.log(itemList.previousSibling);
+
+   //previousElementSibling
+   //console.log(itemList.previousElementSibling);
+
+   //Create Element , text-Node and append 
+   let tag = document.createElement('div');
+   tag.className ='item';
+   tag.id ='ides';
+   let contn =document.createTextNode('Hello World')
+   tag.appendChild(contn);
+
+
+   //SetAttribute
+   tag.setAttribute('title','hello title')
+   //console.log(tag)
+
+   let container =document.querySelector('form .title');
+   let ul =document.querySelector('form ul')
+   container.insertBefore(tag , ul);
+
+   /*let container =document.querySelector('header h2');
+   let ul =document.querySelector('header ul')
+   container.insertBefore(tag , ul);*/
     
 
   </script>
