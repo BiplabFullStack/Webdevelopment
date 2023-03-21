@@ -39,8 +39,6 @@
 
 
   <script>
-
-
     // ------------------------TASK 3 -----------------------------
     //T -1 ------
    /* const tem = document.getElementById('main-header');
@@ -137,7 +135,7 @@
 
    //-------------------------- TASK - 7 ------------------------
 
-    let itemList =document.querySelector("#items");
+   // let itemList =document.querySelector("#items");
 
     //parentElement(T-1)
     //console.log(itemList.parentElement)
@@ -172,24 +170,41 @@
    //console.log(itemList.previousElementSibling);
 
    //Create Element , text-Node and append 
-   let tag = document.createElement('div');
+   /*let tag = document.createElement('div');
    tag.className ='item';
    tag.id ='ides';
    let contn =document.createTextNode('Hello World')
-   tag.appendChild(contn);
+   tag.appendChild(contn);*/
 
 
    //SetAttribute
-   tag.setAttribute('title','hello title')
+   //tag.setAttribute('title','hello title')
    //console.log(tag)
 
-   let container =document.querySelector('form .title');
+   /*let container =document.querySelector('form .title');
    let ul =document.querySelector('form ul')
-   container.insertBefore(tag , ul);
-
-   /*let container =document.querySelector('header h2');
-   let ul =document.querySelector('header ul')
    container.insertBefore(tag , ul);*/
+
+   //main Task -7 ans 
+     //Task -7
+    /* let list =document.getElementById("items");
+     let tag = document.createElement('div');
+    
+    let contn =document.createTextNode('Hello World')
+    tag.appendChild(contn);
+ 
+    let temp=list.innerHTML;
+    console.log(temp);
+    list.innerHTML =tag.innerText +temp;*/
+
+    //task -2
+    let list =document.getElementsByClassName("list-group-item");
+     let tag2 = document.createElement('div');
+    
+    let contn2 =document.createTextNode('Hello World')
+    tag2.appendChild(contn2);
+    list[0].nextElementSibling.innerHTML = tag2.innerHTML+list[0].nextElementSibling.innerHTML
+  
     
 
   </script>
