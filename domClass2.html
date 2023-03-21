@@ -18,8 +18,8 @@
   <div class="container">
    <div id="main" class="card card-body">
     <h2 class="title">Add Items</h2>
-    <form class="form-inline mb-3">
-      <input type="text" class="form-control mr-2">
+    <form id="addForm" class="form-inline mb-3">
+      <input type="text" id="item" class="form-control mr-2">
       <input type="submit" class="btn btn-dark" value="Submit">
     </form>
     <h2 class="title">Items</h2>
@@ -32,13 +32,9 @@
     </ul>
    </div>
   </div>
-
-
-
-
-
-
   <script>
+
+    
     // ------------------------TASK 3 -----------------------------
     //T -1 ------
    /* const tem = document.getElementById('main-header');
@@ -198,14 +194,82 @@
     list.innerHTML =tag.innerText +temp;*/
 
     //task -2
-    let list =document.getElementsByClassName("list-group-item");
+    /*let list =document.getElementsByClassName("list-group-item");
      let tag2 = document.createElement('div');
     
     let contn2 =document.createTextNode('Hello World')
     tag2.appendChild(contn2);
-    list[0].nextElementSibling.innerHTML = tag2.innerHTML+list[0].nextElementSibling.innerHTML
+    list[0].nextElementSibling.innerHTML = tag2.innerHTML+list[0].nextElementSibling.innerHTML*/
   
     
+
+
+    //--------------------------- TASK -8 ---------------------------------
+    let form =document.getElementById("addForm");
+    let itemList =document.getElementById('items');
+    
+    //add Button 
+    form.addEventListener('submit',addItem);
+
+    //Revove button
+    itemList.addEventListener('click',removeItem);
+
+    //Edit Button
+    itemList.addEventListener('click',editItem);
+
+    //edit function
+    function editItem(e){
+      console.log('edit');
+    }
+
+    //Remove Function
+    function removeItem(e){
+      if(e.target.classList.contains('delete')){
+        if(confirm('Are you sure?')){
+          let li =e.target.parentElement;
+          itemList.removeChild(li);
+        }
+      }
+    }
+
+    //add item
+    function addItem(e){
+      e.preventDefault();
+
+      //get input value
+      let newItem =document.getElementById('item').value;
+
+      //create new li element
+      let li =document.createElement('li');
+      li.className ="list-group-item";
+
+      //append input value into li element
+      li.appendChild(document.createTextNode(newItem))
+      
+
+      //Create Delete Button
+      let deleteBtn = document.createElement('button');
+      deleteBtn.className ='btn btn-danger btn-sm float-right delete';
+
+      //append 'x' into deleteBtn
+      deleteBtn.append(document.createTextNode('x'))
+
+      li.appendChild(deleteBtn);
+
+
+      //Create Edit Button
+      let editBtn = document.createElement('button');
+      editBtn.className ='btn btn-primary btn-sm float-right delete';
+
+      //append 'E' into EditBtn
+      editBtn.append(document.createTextNode('E'))
+
+      li.appendChild(editBtn);
+
+      //append li into itemlist
+      itemList.appendChild(li);
+      console.log(li.innerHTML)
+    }
 
   </script>
 
