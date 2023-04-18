@@ -1,8 +1,17 @@
 function onsignup(e) {
     e.preventDefault();
+
+    // 1st away to access the user input value
+    /*
     const Expense = document.getElementById('Expense').value;
     const Description = document.getElementById('Description').value;
-    const Category = document.getElementById('Category').value;
+    const Category = document.getElementById('Category').value; */
+
+    // 2nd away to access the user input value
+    const Expense =e.target.Expense.value;
+    const Description =e.target.Description.value;
+    const Category =e.target.Category.value;
+    e.target.reset();
 
     const obj = {
         Expense,
