@@ -13,7 +13,7 @@ function onsignup(event) {
 
     // localStorage.setItem(myObj.description, JSON.stringify(myObj));
     if (expense && description && category) {
-        axios.post('https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew', myObj)
+        axios.post('https://crudcrud.com/api/16316292ae434191b82a52c2ba1a7934/ExpenseTrackerNew', myObj)
             .then((resolve) => {
                 onScreenFunction(myObj);
                 console.log(resolve);
@@ -28,7 +28,7 @@ function onsignup(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    axios.get('https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew')
+    axios.get('https://crudcrud.com/api/16316292ae434191b82a52c2ba1a7934/ExpenseTrackerNew')
         .then((response) => {
             console.log(response);
             response.data.forEach((element) => {
@@ -54,7 +54,7 @@ function onScreenFunction(myObj) {
     const ul3 = document.getElementById('listOnScreen3');
 
     const li = document.createElement('li');
-    li.innerHTML = JSON.stringify(myObj);
+    li.innerHTML = `${myObj.expense} - ${myObj.category} - ${myObj.description}`;
 
     const delBtn = document.createElement('input');
     delBtn.value = 'Delete';
@@ -63,7 +63,7 @@ function onScreenFunction(myObj) {
         //     localStorage.removeItem(myObj.description);
         //     ul.removeChild(li);
         // }
-        const url = `https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew/${myObj._id}`;
+        const url = `https://crudcrud.com/api/16316292ae434191b82a52c2ba1a7934/ExpenseTrackerNew/${myObj._id}`;
         axios.delete(url)
             .then(() => {
                 if(myObj.category == 'Table 1'){
@@ -89,7 +89,7 @@ function onScreenFunction(myObj) {
         document.getElementById('Description').value = myObj.description;
         document.getElementById('Category').value = myObj.category;
 
-        axios.delete(`https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew/${myObj._id}`)
+        axios.delete(`https://crudcrud.com/api/16316292ae434191b82a52c2ba1a7934/ExpenseTrackerNew/${myObj._id}`)
             .then(() => {
                 if(myObj.category == 'Table 1'){
                     ul1.removeChild(li);
