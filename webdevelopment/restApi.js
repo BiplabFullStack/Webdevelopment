@@ -13,7 +13,7 @@ function onsignup(event) {
 
     // localStorage.setItem(myObj.description, JSON.stringify(myObj));
     if (expense && description && category) {
-        axios.post('https://crudcrud.com/api/6d856ac4e75f4a73b1dd055cf12fbd9d/ExpenseTrackerNew', myObj)
+        axios.post('https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew', myObj)
             .then((resolve) => {
                 onScreenFunction(myObj);
                 console.log(resolve);
@@ -28,7 +28,7 @@ function onsignup(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    axios.get('https://crudcrud.com/api/6d856ac4e75f4a73b1dd055cf12fbd9d/ExpenseTrackerNew')
+    axios.get('https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew')
         .then((response) => {
             console.log(response);
             response.data.forEach((element) => {
@@ -63,10 +63,17 @@ function onScreenFunction(myObj) {
         //     localStorage.removeItem(myObj.description);
         //     ul.removeChild(li);
         // }
-        const url = `https://crudcrud.com/api/6d856ac4e75f4a73b1dd055cf12fbd9d/ExpenseTrackerNew/${myObj._id}`;
+        const url = `https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew/${myObj._id}`;
         axios.delete(url)
             .then(() => {
-                ul.removeChild(li);
+                if(myObj.category == 'Table 1'){
+                    ul1.removeChild(li);
+                }else if(myObj.category == 'Table 2'){
+                    ul2.removeChild(li);
+                }else{
+                    ul3.removeChild(li);
+                }
+                
             })
             .catch((err) => {
                 console.error(err);
@@ -82,20 +89,28 @@ function onScreenFunction(myObj) {
         document.getElementById('Description').value = myObj.description;
         document.getElementById('Category').value = myObj.category;
 
-        axios.delete(`https://crudcrud.com/api/6d856ac4e75f4a73b1dd055cf12fbd9d/ExpenseTrackerNew/${myObj._id}`)
+        axios.delete(`https://crudcrud.com/api/5acdff13528b44b2a92970ca9484a30e/ExpenseTrackerNew/${myObj._id}`)
             .then(() => {
-                ul.removeChild(li);
+                if(myObj.category == 'Table 1'){
+                    ul1.removeChild(li);
+                }else if(myObj.category == 'Table 2'){
+                    ul2.removeChild(li);
+                }else{
+                    ul3.removeChild(li);
+                }
+             
             })
             .error((err) => {
                 console.error(err);
             })
     };
 
-    li.appendChild(editBtn);
     li.appendChild(delBtn);
-    if(myObj.Category == 'Table 1'){
+    li.appendChild(editBtn);
+    //ul.appendChild(li);
+    if(myObj.category == 'Table 1'){
         ul1.appendChild(li);
-    }else if(myObj.Category == 'Table 2'){
+    }else if(myObj.category == 'Table 2'){
         ul2.appendChild(li);
     }else{
         ul3.appendChild(li);
